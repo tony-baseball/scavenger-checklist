@@ -27,6 +27,11 @@
             width: 80%;
             max-width: 500px; /* Limit the paragraph width */
         }
+        .item {
+            margin-bottom: 10px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 1s ease-in-out; /* Fade-in transition */
+        }
         
     </style>
 </head>
@@ -38,10 +43,23 @@
         <div class="item">1. <input type="checkbox" checked disabled> <input type="text" value="Jigsaw on TV" disabled></div>
 
         <!-- Loop for 2 to 20 items -->
-        <script>
+         <script>
             for (let i = 2; i <= 20; i++) {
-                document.write('<div class="item">' + i + '. <input type="checkbox"> <input type="text" placeholder="Enter Clue Location"></div>');
+                document.write('<div class="item" id="item-' + i + '">' + i + '. <input type="checkbox"> <input type="text" placeholder="Enter text here"></div>');
             }
+
+            // Function to progressively show items with a fade-in effect
+            function fadeInItems() {
+                const items = document.querySelectorAll('.item');
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = 1; // Fade-in each item
+                    }, index * 300); // Delay for each item to create staggered effect
+                });
+            }
+
+            // Trigger the fade-in effect when the page loads
+            window.onload = fadeInItems;
         </script>
     </div>
 </body>
