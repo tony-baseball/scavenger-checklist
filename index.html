@@ -1,7 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Check List</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+         p {
+            margin-top: 15px;
+            font-size: 16px;
+            text-align: center;
+            width: 80%;
+            max-width: 500px; /* Limit the paragraph width */
+        }
+        
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+     <img src="https://imgur.com/kfYsKfs.png" alt="Centered Image" style="width: 500px; height: auto;">
+     <p> <b> IF YOU REFRESH THIS PAGE, YOU WILL LOSE YOUR ANSWERS! <b/> <br> Take screenshots just to be safe. <p/> 
+    <div class="container">
+        <!-- First item with specific settings -->
+        <div class="item">1. <input type="checkbox" checked disabled> <input type="text" value="Jigsaw on TV" disabled></div>
+
+        <!-- Loop for 2 to 20 items -->
+        <script>
+            for (let i = 2; i <= 20; i++) {
+                document.write('<div class="item">' + i + '. <input type="checkbox"> <input type="text" placeholder="Enter Clue Location"></div>');
+            }
+        </script>
+    </div>
 </body>
 </html>
