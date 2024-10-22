@@ -17,60 +17,46 @@
             margin: 0;
         }
         img {
-            max-width: 200px;
+            max-width: 250px;
             margin-bottom: 20px;
         }
-         p {
+        p {
             margin-top: 15px;
             font-size: 16px;
             text-align: center;
             width: 80%;
             max-width: 500px; /* Limit the paragraph width */
         }
-         h {
+        h1 {
             margin-top: 15px;
-            font-size: 16px;
+            font-size: 24px; /* Increased font size for heading */
             text-align: center;
             width: 80%;
             max-width: 500px; /* Limit the paragraph width */
         }
         .item {
             margin-bottom: 10px;
-            opacity: 0; /* Start hidden */
-            transition: opacity 1s ease-in-out; /* Fade-in transition */
+            opacity: 1; /* Show items immediately */
         }
-        
     </style>
 </head>
 <body>
-<br>
-<br>
-     <img src="https://imgur.com/kfYsKfs.png" alt="Centered Image" style="width: 500px; height: auto;">
-     <h1 style="text-align: center;"> SCANVENGER HUNT CLUE CHECKLIST </h1>
-     <p> <b> IF YOU REFRESH THIS PAGE, YOU WILL LOSE YOUR ANSWERS! <b/> <br> Take screenshots just to be safe. <p/> 
+    <br>
+    <br>
+    <img src="https://imgur.com/kfYsKfs.png" alt="Centered Image" style="width: 500px; height: auto;">
+    <h1>SCANVENGER HUNT CLUE CHECKLIST</h1>
+    <p><b>IF YOU REFRESH THIS PAGE, YOU WILL LOSE YOUR ANSWERS!</b><br>Take screenshots just to be safe.</p>
     <div class="container">
         <!-- First item with specific settings -->
         <div class="item">1. <input type="checkbox" checked disabled> <input type="text" value="Jigsaw on TV" disabled></div>
 
         <!-- Loop for 2 to 20 items -->
-         <script>
+        <script>
             for (let i = 2; i <= 20; i++) {
                 document.write('<div class="item" id="item-' + i + '">' + i + '. <input type="checkbox"> <input type="text" placeholder="Clue item & location"></div>');
             }
-
-            // Function to progressively show items with a fade-in effect
-            function fadeInItems() {
-                const items = document.querySelectorAll('.item');
-                items.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = 1; // Fade-in each item
-                    }, index * 300); // Delay for each item to create staggered effect
-                });
-            }
-
-            // Trigger the fade-in effect when the page loads
-            window.onload = fadeInItems;
         </script>
     </div>
 </body>
 </html>
+
